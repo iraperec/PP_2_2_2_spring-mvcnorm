@@ -1,21 +1,33 @@
 package web.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
+@Scope("prototype")
 public class Car {
     private String model;
     private int year;
     private String color;
 
-    public Car(String model, int year, String color) {
+//    public Car(String model, int year, String color) {
+//        this.model = model;
+//        this.year = year;
+//        this.color = color;
+//    }
+    public Car() {}
+
+
+    public void setAll(String model, int year, String color) {
         this.model = model;
         this.year = year;
         this.color = color;
     }
-    public Car() {}
-
-
 
     public String getModel() {
         return model;
